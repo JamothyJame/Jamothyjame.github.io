@@ -604,6 +604,68 @@ nav a:focus-visible,
    Apply these rules only when the viewport is
    900px wide or narrower.
 */
+
+/* =========================================================
+   COMPLETE PROJECTS PAGE
+   ========================================================= */
+
+.projects-page {
+    min-height: 100vh;
+    padding: 80px 5% 120px;
+
+    background: var(--sky);
+    color: var(--navy);
+}
+
+
+/*
+   Introductory heading at the top of Projects,
+   About, Writing, and similar pages.
+*/
+.page-heading {
+    width: min(1200px, 100%);
+    margin: 0 auto 100px;
+}
+
+
+.page-heading h1 {
+    margin: 12px 0;
+
+    font-size: clamp(4rem, 10vw, 9rem);
+    line-height: 0.9;
+    letter-spacing: -0.055em;
+}
+
+
+.page-heading p:not(.eyebrow) {
+    max-width: 650px;
+
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+
+/*
+   Each category gets its own separated section.
+*/
+.project-category {
+    width: min(1200px, 100%);
+    margin: 0 auto 110px;
+}
+
+
+.project-category h2 {
+    margin-top: 10px;
+
+    font-size: clamp(2rem, 4vw, 4rem);
+    letter-spacing: -0.035em;
+}
+
+
+.projects-page .eyebrow {
+    color: var(--navy);
+}
+
 @media (max-width: 900px) {
     /*
        Temporarily hide desktop navigation.
