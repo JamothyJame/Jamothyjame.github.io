@@ -24,10 +24,10 @@
         <a class="logo" href="#">James Obergh</a>
 
         <nav>
-            <a href="#projects">Projects</a>
-            <a href="#">Writing</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
+            <a href="projects.html">Projects</a>
+            <a href="writing.html">Writing</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
         </nav>
     </header>
 
@@ -35,11 +35,11 @@
         <section class="hero">
             <div class="hero-content">
                 <p class="eyebrow">
-                    Engineer · Programmer · Builder
+                    Builder · Skater · Artist
                 </p>
 
                 <h1>
-                    I build things to understand how they work.
+                    "what will you do with your one wild and precious life" - Mary Oliver
                 </h1>
 
                 <p class="hero-description">
@@ -47,15 +47,14 @@
                     FPV drones, and creative experiments.
                 </p>
 
-                <div class="buttons">
-                    <a class="button" href="#projects">
-                        Explore Projects
-                    </a>
-
-                    <a class="button secondary" href="#">
-                        About Me
-                    </a>
-                </div>
+            <div class="buttons">
+                <a class="button" href="projects.html">
+                    Explore Projects
+                </a>
+            
+                <a class="button secondary" href="about.html">
+                    About Me
+                </a>
             </div>
 
             <div class="floating-name" aria-hidden="true">
@@ -70,35 +69,114 @@
                 <h2>Featured Projects</h2>
 
                 <div class="project-grid">
-                    <article class="project-card">
-                        <p class="eyebrow">Arduino</p>
-                        <h3>DuckyScript Interpreter</h3>
-
-                        <p>
-                            An Arduino library that interprets
-                            DuckyScript-style commands.
-                        </p>
-                    </article>
-
-                    <article class="project-card">
-                        <p class="eyebrow">FPV</p>
-                        <h3>Learning to Fly</h3>
-
-                        <p>
-                            Documenting the process of selecting,
-                            building, and flying an FPV drone.
-                        </p>
-                    </article>
-
-                    <article class="project-card">
-                        <p class="eyebrow">Game Development</p>
-                        <h3>Glyphlings</h3>
-
-                        <p>
-                            A puzzle-driven creature collection
-                            game built around reasoning and skill.
-                        </p>
-                    </article>
+                
+                    <!-- Featured project 1 -->
+                    <a
+                        class="project-card-link"
+                        href="projects/duckyscript-interpreter.html"
+                    >
+                        <article class="project-card">
+                            <p class="eyebrow">Arduino / C++</p>
+                
+                            <h3>DuckyScript Interpreter</h3>
+                
+                            <p>
+                                An Arduino library that reads DuckyScript-style
+                                commands and converts them into USB keyboard actions.
+                            </p>
+                
+                            <span class="project-link-text">
+                                View project →
+                            </span>
+                        </article>
+                    </a>
+                
+                
+                    <!-- Featured project 2 -->
+                    <a
+                        class="project-card-link"
+                        href="projects/fpv-learning-journey.html"
+                    >
+                        <article class="project-card">
+                            <p class="eyebrow">FPV Drones</p>
+                
+                            <h3>Learning to Fly FPV</h3>
+                
+                            <p>
+                                Documenting the process of selecting equipment,
+                                practicing in a simulator, and learning to fly.
+                            </p>
+                
+                            <span class="project-link-text">
+                                View project →
+                            </span>
+                        </article>
+                    </a>
+                
+                
+                
+                    <!-- Featured project 4 -->
+                    <a
+                        class="project-card-link"
+                        href="projects/phone-flip-game.html"
+                    >
+                        <article class="project-card">
+                            <p class="eyebrow">Godot / Mobile</p>
+                
+                            <h3>Phone Flip Game</h3>
+                
+                            <p>
+                                A mobile experiment using gyroscope data to detect
+                                rotations, airtime, catches, and scoring.
+                            </p>
+                
+                            <span class="project-link-text">
+                                View project →
+                            </span>
+                        </article>
+                    </a>
+                
+                
+                    <!-- Featured project 5 -->
+                    <a
+                        class="project-card-link"
+                        href="projects/semiconductor-supply-chain.html"
+                    >
+                        <article class="project-card">
+                            <p class="eyebrow">Research</p>
+                
+                            <h3>Semiconductor Supply Chain</h3>
+                
+                            <p>
+                                A visual exploration of the companies, materials,
+                                machines, and processes behind modern chips.
+                            </p>
+                
+                            <span class="project-link-text">
+                                View project →
+                            </span>
+                        </article>
+                    </a>
+                
+                
+                    <!-- Link to the full Projects page -->
+                    <a class="project-card-link" href="projects.html">
+                        <article class="project-card project-card-more">
+                            <p class="eyebrow">More Work</p>
+                
+                            <h3>All Projects</h3>
+                
+                            <p>
+                                Browse electronics, software, games, research,
+                                prototypes, and other experiments.
+                            </p>
+                
+                            <span class="project-link-text">
+                                See everything →
+                            </span>
+                        </article>
+                    </a>
+                
                 </div>
             </div>
         </section>
