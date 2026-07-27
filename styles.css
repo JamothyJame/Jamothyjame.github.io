@@ -1,226 +1,627 @@
+/* =========================================================
+   COLOR PALETTE AND DESIGN VARIABLES
+   ========================================================= */
+
 :root {
-    --background: #c8c7ff;
-    --text: #142536;
-    --accent: #174f55;
-    --light: #f7f5ed;
+    /* Colors taken from your coastal palette */
+    --cream: #FCF5EA;
+    --pink: #F1CED3;
+    --navy: #355469;
+    --blue: #64A8C8;
+    --sky: #ABCFE0;
+    --lavender: #E7E4F3;
+
+    /*
+       Semantic variables describe how colors are used.
+
+       This makes it easier to change the design later.
+       For example, changing --background changes every
+       element that uses var(--background).
+    */
+    --background: var(--navy);
+    --surface: var(--sky);
+    --text: var(--cream);
+    --text-dark: var(--navy);
+    --accent: var(--blue);
+    --highlight: var(--pink);
+    --paper: var(--lavender);
+    --card: var(--cream);
 }
 
+
+/* =========================================================
+   GLOBAL PAGE SETTINGS
+   ========================================================= */
+
+/*
+   Apply border-box sizing to every element.
+
+   With border-box, padding and borders are included
+   inside the element's declared width and height.
+*/
 * {
     box-sizing: border-box;
 }
 
+
+/*
+   Smoothly animate movement when following links
+   such as href="#projects".
+*/
 html {
     scroll-behavior: smooth;
 }
 
+
+/* Main page styling */
 body {
+    /* Remove the browser's default outer spacing */
     margin: 0;
+
+    /* Make the page at least as tall as the screen */
     min-height: 100vh;
+
+    /*
+       Prevent horizontally overflowing objects,
+       such as the large floating name, from creating
+       a horizontal scrollbar.
+    */
     overflow-x: hidden;
 
     background: var(--background);
     color: var(--text);
 
+    /*
+       The browser tries Arial first.
+       If Arial is unavailable, it tries Helvetica,
+       followed by the default sans-serif font.
+    */
     font-family: Arial, Helvetica, sans-serif;
 }
 
+
+/* =========================================================
+   SITE HEADER AND NAVIGATION
+   ========================================================= */
+
 .site-header {
+    /*
+       Keep the header in the normal page layout while
+       allowing z-index to control its stacking order.
+    */
     position: relative;
     z-index: 10;
 
+    /*
+       Place the logo and navigation beside each other.
+    */
     display: flex;
+
+    /*
+       Push the logo to the left and navigation to the right.
+    */
     justify-content: space-between;
+
+    /* Vertically align the logo and navigation */
     align-items: center;
 
+    /*
+       Use 90% of the viewport width, but never exceed 1200px.
+    */
     width: min(1200px, 90%);
+
+    /*
+       0 gives no top/bottom margin.
+       auto centers the header horizontally.
+    */
     margin: 0 auto;
+
+    /* Add 24px of space above and below the header contents */
     padding: 24px 0;
 }
 
+
+/* Website name shown in the upper-left corner */
 .logo {
-    color: var(--text);
-    font-size: 1.2rem;
+    color: var(--cream);
     font-weight: 700;
     text-decoration: none;
 }
 
+
+/* Navigation link container */
 nav {
     display: flex;
+
+    /* Place 28px between each navigation link */
     gap: 28px;
 }
 
+
+/* Individual navigation links */
 nav a {
-    color: var(--text);
+    color: var(--cream);
     text-decoration: none;
+
+    /*
+       Animate color and movement instead of changing
+       them instantly.
+    */
+    transition:
+        color 180ms ease,
+        transform 180ms ease;
 }
 
+
+/* Navigation link behavior when hovered */
 nav a:hover {
-    text-decoration: underline;
+    color: var(--pink);
+
+    /* Move the link upward by 2px */
+    transform: translateY(-2px);
 }
+
+
+/* =========================================================
+   HERO SECTION
+   ========================================================= */
 
 .hero {
+    /*
+       Create a positioning context for objects inside
+       the hero section.
+    */
     position: relative;
+
+    /*
+       Creates an isolated stacking context so hero layers
+       do not unexpectedly overlap elements outside the hero.
+    */
     isolation: isolate;
+
+    /*
+       Hide parts of decorative objects that extend outside
+       the hero section.
+    */
     overflow: hidden;
 
+    /*
+       Build a two-column layout:
+       left side = introduction
+       right side = large floating name
+    */
     display: grid;
-    grid-template-columns: minmax(0, 1.15fr) minmax(420px, 0.85fr);
+
+    /*
+       The first column receives slightly more space.
+
+       minmax(0, 1.15fr):
+       Can shrink to zero and receives 1.15 shares.
+
+       minmax(420px, 0.85fr):
+       Stays at least 420px wide and receives 0.85 shares.
+    */
+    grid-template-columns:
+        minmax(0, 1.15fr)
+        minmax(420px, 0.85fr);
+
+    /* Vertically center the two columns */
     align-items: center;
+
+    /* Space between the columns */
     gap: 40px;
 
+    /* Match the width and alignment of the header */
     width: min(1200px, 90%);
-    min-height: calc(100svh - 80px);
     margin: 0 auto;
+
+    /*
+       svh means "small viewport height."
+
+       The hero fills approximately one screen,
+       minus space used by the header.
+    */
+    min-height: calc(100svh - 80px);
 }
 
+
+/* Contains the eyebrow, heading, description, and buttons */
 .hero-content {
     position: relative;
+
+    /*
+       Place the content above the decorative floating name.
+    */
     z-index: 2;
 
+    /*
+       Prevent the content from becoming excessively wide
+       on large monitors.
+    */
     max-width: 780px;
 }
 
+
+/*
+   Small uppercase category-style text, such as:
+
+   ENGINEER · PROGRAMMER · BUILDER
+*/
 .eyebrow {
+    color: var(--sky);
+
     font-family: monospace;
     font-size: 0.9rem;
+    font-weight: 700;
+
+    /* Increase spacing between letters */
     letter-spacing: 0.15em;
+
+    /* Display the text in uppercase */
     text-transform: uppercase;
 }
 
+
+/*
+   Override the normal eyebrow color only when an eyebrow
+   is inside the projects section.
+
+   The darker color is more readable against the light
+   projects background.
+*/
+.projects .eyebrow {
+    color: var(--navy);
+}
+
+
+/* Main hero heading */
 .hero h1 {
+    /*
+       Top margin: 18px
+       Left/right margin: 0
+       Bottom margin: 24px
+    */
     margin: 18px 0 24px;
 
+    /*
+       Responsive font size:
+
+       Minimum: 3.8rem
+       Preferred: 6.5% of viewport width
+       Maximum: 7rem
+    */
     font-size: clamp(3.8rem, 6.5vw, 7rem);
+
+    /*
+       Tight line spacing makes the large heading
+       feel more compact.
+    */
     line-height: 0.92;
+
+    /*
+       Slight negative letter spacing pulls large
+       letters closer together.
+    */
     letter-spacing: -0.045em;
 }
 
+
+/* Paragraph beneath the main heading */
 .hero-description {
     max-width: 620px;
     font-size: 1.15rem;
+
+    /* Add comfortable vertical spacing between text lines */
     line-height: 1.6;
 }
 
+
+/* Container holding both hero buttons */
 .buttons {
     display: flex;
     gap: 14px;
     margin-top: 30px;
 }
 
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
 .button {
+    /*
+       Inline-block allows the link to behave like an
+       inline element while accepting padding and sizing.
+    */
     display: inline-block;
+
     padding: 14px 22px;
 
-    border: 2px solid var(--accent);
+    border: 2px solid var(--blue);
     border-radius: 6px;
 
-    background: var(--accent);
-    color: white;
+    background: var(--blue);
+    color: var(--navy);
 
     font-weight: 700;
     text-decoration: none;
 
+    /*
+       Smoothly animate all button states that change
+       during hover.
+    */
     transition:
+        background 180ms ease,
+        border-color 180ms ease,
+        color 180ms ease,
         transform 180ms ease,
         box-shadow 180ms ease;
 }
 
+
+/*
+   Secondary button variation.
+
+   It keeps the normal button dimensions but has
+   a transparent background.
+*/
 .button.secondary {
+    border-color: var(--cream);
+
     background: transparent;
-    color: var(--accent);
+    color: var(--cream);
 }
 
+
+/* Hover behavior for primary and secondary buttons */
 .button:hover {
+    /* Move the button upward */
     transform: translateY(-4px);
-    box-shadow: 6px 6px 0 var(--text);
+
+    background: var(--pink);
+    border-color: var(--pink);
+
+    /*
+       Add a solid offset shadow:
+       6px right, 6px down, no blur.
+    */
+    box-shadow: 6px 6px 0 var(--sky);
 }
+
+
+/* Additional hover behavior specific to the secondary button */
+.button.secondary:hover {
+    background: var(--lavender);
+    border-color: var(--lavender);
+    color: var(--navy);
+}
+
+
+/*
+   Keyboard accessibility.
+
+   focus-visible normally appears when a visitor navigates
+   using Tab rather than clicking with the mouse.
+*/
+.button:focus-visible,
+nav a:focus-visible,
+.logo:focus-visible {
+    outline: 3px solid var(--pink);
+
+    /* Move the outline away from the element by 4px */
+    outline-offset: 4px;
+}
+
+
+/* =========================================================
+   INTERACTIVE FLOATING NAME
+   ========================================================= */
 
 .floating-name {
     position: relative;
+
+    /*
+       Keep the decorative name behind the hero content.
+    */
     z-index: 1;
 
+    /*
+       Place the name at the bottom of its grid column.
+    */
     align-self: end;
+
+    /*
+       vh means viewport height.
+       8vh is 8% of the screen's height.
+    */
     margin-bottom: 8vh;
 
+    /*
+       Responsive font size:
+       minimum 6rem, preferred 10vw, maximum 11rem.
+    */
     font-size: clamp(6rem, 10vw, 11rem);
+
     font-weight: 900;
     line-height: 0.68;
     letter-spacing: -0.06em;
 
-    color: rgba(240, 235, 225, 0.22);
+    /*
+       Lavender with 32% opacity.
 
+       rgba values:
+       red, green, blue, alpha
+    */
+    color: rgba(231, 228, 243, 0.32);
+
+    /*
+       Prevent the decorative name from blocking clicks
+       or mouse events intended for elements beneath it.
+    */
     pointer-events: none;
+
+    /*
+       Prevent visitors from highlighting the decorative text.
+    */
     user-select: none;
 
+    /*
+       JavaScript changes the transform property,
+       and this transition smooths that movement.
+    */
     transition: transform 180ms ease-out;
 }
 
+
+/*
+   Display each name as its own line.
+
+   Without display: block, both spans would normally
+   appear beside each other.
+*/
 .floating-name span {
     display: block;
 }
 
+
+/*
+   JavaScript moves James and Obergh independently.
+
+   This makes each movement transition smoothly.
+*/
 .first-name,
 .last-name {
     transition: transform 180ms ease-out;
 }
 
+
+/* =========================================================
+   PROJECTS SECTION
+   ========================================================= */
+
 .projects {
+    /* Make the projects section at least one screen tall */
     min-height: 100vh;
+
+    /*
+       100px top/bottom padding.
+       5% left/right padding.
+    */
     padding: 100px 5%;
 
-    background: var(--light);
+    background: var(--sky);
+    color: var(--navy);
 }
 
+
+/* Centers the project content and limits its width */
 .projects-inner {
     width: min(1200px, 100%);
     margin: 0 auto;
 }
 
+
+/* Grid holding all project cards */
 .project-grid {
     display: grid;
+
+    /*
+       Create three equal-width columns.
+    */
     grid-template-columns: repeat(3, 1fr);
+
+    /* Space between cards */
     gap: 24px;
 }
 
+
+/* Individual project card */
 .project-card {
     min-height: 260px;
     padding: 28px;
 
-    border: 2px solid var(--text);
+    border: 2px solid var(--navy);
     border-radius: 10px;
 
-    background: white;
+    background: var(--cream);
+    color: var(--navy);
 
+    /*
+       Smooth the card's movement, color, and shadow.
+    */
     transition:
         transform 200ms ease,
+        background 200ms ease,
         box-shadow 200ms ease;
 }
 
+
+/* Project card interaction */
 .project-card:hover {
+    /*
+       Move the card 6px left and 6px upward.
+    */
     transform: translate(-6px, -6px);
-    box-shadow: 10px 10px 0 var(--accent);
+
+    background: var(--lavender);
+
+    /*
+       Add a solid shadow 10px right and 10px down.
+    */
+    box-shadow: 10px 10px 0 var(--pink);
 }
 
+
+/* =========================================================
+   MOBILE AND TABLET LAYOUT
+   ========================================================= */
+
+/*
+   Apply these rules only when the viewport is
+   900px wide or narrower.
+*/
 @media (max-width: 900px) {
+    /*
+       Temporarily hide desktop navigation.
+
+       Later, this can be replaced with a mobile menu button.
+    */
     nav {
         display: none;
     }
 
+
+    /*
+       Change the desktop grid into a vertical flex layout.
+    */
     .hero {
         display: flex;
         flex-direction: column;
+
         align-items: flex-start;
         justify-content: center;
 
         padding: 70px 0 40px;
     }
 
+
+    /* Adjust heading size for smaller displays */
     .hero h1 {
         font-size: clamp(3.4rem, 12vw, 5.5rem);
     }
 
+
+    /*
+       On smaller screens, position the floating name
+       behind the hero content.
+    */
     .floating-name {
         position: absolute;
+
+        /*
+           Negative right positioning allows part of the
+           decorative text to extend beyond the screen edge.
+        */
         right: -8%;
         bottom: 7%;
 
@@ -228,6 +629,11 @@ nav a:hover {
         opacity: 0.45;
     }
 
+
+    /*
+       Change project cards from three columns
+       to one vertical column.
+    */
     .project-grid {
         grid-template-columns: 1fr;
     }
