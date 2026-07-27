@@ -186,19 +186,19 @@ nav a:hover {
        left side = introduction
        right side = large floating name
     */
-    display: grid;
+    display: flex;
 
     /*
        The first column receives slightly more space.
 
-       minmax(0, 1.14fr):
-       Can shrink to zero and receives 1.14 shares.
+       minmax(0, 1.25fr):
+       Can shrink to zero and receives 1.25 shares.
 
        minmax(340px, 0.6fr):
        Stays at least 340px wide and receives 0.6 shares.
     */
    
-    grid-template-columns: minmax(0, 1.14fr) minmax(340px, 0.6fr);
+    grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
 
     /* Vertically center the two columns */
     align-items: center;
@@ -412,26 +412,29 @@ nav a:focus-visible,
    INTERACTIVE FLOATING NAME
    ========================================================= */
 
+/* Large decorative name used as a lower-right watermark */
 .floating-name {
-    position: relative;
-    z-index: 1;
+    position: absolute;
+    right: clamp(1rem, 4vw, 5rem);
+    bottom: clamp(1rem, 4vh, 3.5rem);
 
-    justify-self: end;
-    align-self: end;
+    z-index: 0;
 
-    margin-bottom: 6vh;
-
-    font-size: clamp(5rem, 8vw, 8.5rem);
+    font-size: clamp(5rem, 9vw, 9rem);
     font-weight: 900;
     line-height: 0.68;
     letter-spacing: -0.06em;
+    text-align: right;
 
-    color: rgba(231, 228, 243, 0.42);
+    color: var(--lavender);
+    opacity: 0.16;
 
     pointer-events: none;
     user-select: none;
 
-    transition: transform 180ms ease-out;
+    transition:
+        transform 180ms ease-out,
+        opacity 180ms ease;
 }
 
 
@@ -811,19 +814,13 @@ nav a:focus-visible,
        On smaller screens, position the floating name
        behind the hero content.
     */
-    .floating-name {
-        position: absolute;
+.floating-name {
+    right: -5%;
+    bottom: 3%;
 
-        /*
-           Negative right positioning allows part of the
-           decorative text to extend beyond the screen edge.
-        */
-        right: -8%;
-        bottom: 7%;
-
-        font-size: clamp(6rem, 22vw, 10rem);
-        opacity: 0.45;
-    }
+    font-size: clamp(5rem, 22vw, 9rem);
+    opacity: 0.10;
+}
 
 
     /*
