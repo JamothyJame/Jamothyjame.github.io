@@ -666,6 +666,116 @@ nav a:focus-visible,
     color: var(--navy);
 }
 
+/* =========================================================
+   INDIVIDUAL PROJECT PAGES
+   ========================================================= */
+
+.project-page {
+    min-height: 100vh;
+    padding: 70px 5% 120px;
+
+    background: var(--cream);
+    color: var(--navy);
+}
+
+
+.project-hero {
+    width: min(1000px, 100%);
+    margin: 0 auto 100px;
+}
+
+
+.project-hero .eyebrow {
+    color: var(--navy);
+}
+
+
+.project-hero h1 {
+    max-width: 900px;
+    margin: 16px 0 28px;
+
+    font-size: clamp(4rem, 9vw, 8rem);
+    line-height: 0.9;
+    letter-spacing: -0.055em;
+}
+
+
+.project-summary {
+    max-width: 750px;
+
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
+    line-height: 1.55;
+}
+
+
+.project-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 28px;
+
+    margin-top: 40px;
+    padding-top: 24px;
+
+    border-top: 2px solid var(--navy);
+
+    font-family: monospace;
+    font-size: 0.9rem;
+}
+
+
+.project-body {
+    width: min(780px, 100%);
+    margin: 0 auto;
+}
+
+
+.project-body section {
+    margin-bottom: 80px;
+}
+
+
+.project-body h2 {
+    margin-bottom: 18px;
+
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    letter-spacing: -0.035em;
+}
+
+
+.project-body p,
+.project-body li {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+
+.project-body pre {
+    overflow-x: auto;
+
+    padding: 24px;
+    margin: 32px 0;
+
+    border: 2px solid var(--navy);
+    border-radius: 8px;
+
+    background: var(--navy);
+    color: var(--cream);
+}
+
+
+.project-body code {
+    font-family:
+        Consolas,
+        "Courier New",
+        monospace;
+}
+
+
+.project-footer {
+    width: min(780px, 100%);
+    margin: 100px auto 0;
+}
+
 @media (max-width: 900px) {
     /*
        Temporarily hide desktop navigation.
