@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="An Arduino DuckyScript interpreter project by James Obergh."
+    >
+
+    <title>DuckyScript Interpreter | James Obergh</title>
+
+    <!-- ../ moves upward from the projects folder -->
+    <link rel="stylesheet" href="../styles.css?v=3">
+    <script src="../script.js?v=3" defer></script>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <a class="logo" href="../index.html">
+            James Obergh
+        </a>
+
+        <nav>
+            <a href="../projects.html">Projects</a>
+            <a href="../writing.html">Writing</a>
+            <a href="../about.html">About</a>
+            <a href="../contact.html">Contact</a>
+        </nav>
+    </header>
+
+
+    <main class="project-page">
+
+        <!-- Project introduction -->
+        <header class="project-hero">
+            <p class="eyebrow">Arduino / C++ / USB HID</p>
+
+            <h1>DuckyScript Interpreter</h1>
+
+            <p class="project-summary">
+                An Arduino library that allows DuckyScript-style
+                commands to be written directly inside an Arduino
+                sketch using a C++ raw string.
+            </p>
+
+            <div class="project-meta">
+                <span>Role: Designer and developer</span>
+                <span>Status: In development</span>
+                <span>Tools: Arduino, C++, USB HID</span>
+            </div>
+        </header>
+
+
+        <!-- Main project explanation -->
+        <article class="project-body">
+
+            <section>
+                <h2>The idea</h2>
+
+                <p>
+                    I wanted Arduino users to be able to write simple
+                    keyboard automation scripts without manually
+                    converting every command into Keyboard library calls.
+                </p>
+            </section>
+
+
+            <section>
+                <h2>How it works</h2>
+
+                <p>
+                    The library accepts a multiline raw string,
+                    separates it into individual lines, identifies each
+                    command, parses its argument, and executes the
+                    corresponding Arduino function.
+                </p>
+
+                <pre><code>DStoArduino(R"DS(
+DELAY 1000
+GUI r
+STRING notepad
+ENTER
+STRING Hello World
+)DS");</code></pre>
+            </section>
+
+
+            <section>
+                <h2>Interpreter pipeline</h2>
+
+                <ol>
+                    <li>Receive the raw string.</li>
+                    <li>Read one line at a time.</li>
+                    <li>Separate command from argument.</li>
+                    <li>Validate the command.</li>
+                    <li>Execute the Arduino equivalent.</li>
+                </ol>
+            </section>
+
+
+            <section>
+                <h2>Challenges</h2>
+
+                <p>
+                    Important design problems include limited Arduino
+                    memory, keyboard layouts, line-length limits,
+                    error reporting, modifier combinations, and safely
+                    stopping a running script.
+                </p>
+            </section>
+
+
+            <section>
+                <h2>What I learned</h2>
+
+                <p>
+                    This project introduced me to interpreters, parsing,
+                    string processing, USB HID behavior, library design,
+                    and the differences between desktop C++ and
+                    microcontroller programming.
+                </p>
+            </section>
+
+        </article>
+
+
+        <!-- Return link -->
+        <footer class="project-footer">
+            <a class="button" href="../projects.html">
+                ← Back to Projects
+            </a>
+        </footer>
+
+    </main>
+
+</body>
+</html>
