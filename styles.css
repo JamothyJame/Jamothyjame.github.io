@@ -159,6 +159,11 @@ nav a:hover {
     display: block;
 }
 
+.first-name,
+.last-name {
+    transition: transform 180ms ease-out;
+}
+
 .projects {
     min-height: 100vh;
     padding: 100px 5%;
