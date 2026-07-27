@@ -517,20 +517,82 @@ nav a:focus-visible,
         box-shadow 200ms ease;
 }
 
+/*
+   Make the entire project card clickable without
+   displaying the normal anchor underline or color.
+*/
+.project-card-link {
+    display: block;
 
-/* Project card interaction */
-.project-card:hover {
-    /*
-       Move the card 6px left and 6px upward.
-    */
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/*
+   Give the card content a vertical layout so the
+   "View project" text can remain near the bottom.
+*/
+.project-card {
+    display: flex;
+    flex-direction: column;
+
+    min-height: 280px;
+    padding: 28px;
+
+    border: 2px solid var(--navy);
+    border-radius: 10px;
+
+    background: var(--cream);
+    color: var(--navy);
+
+    transition:
+        transform 200ms ease,
+        background 200ms ease,
+        box-shadow 200ms ease;
+}
+
+
+/*
+   Push the final link label toward the bottom
+   of the card.
+*/
+.project-link-text {
+    margin-top: auto;
+    padding-top: 28px;
+
+    font-weight: 700;
+}
+
+
+/*
+   Move and recolor a project card when the link
+   containing it is hovered.
+*/
+.project-card-link:hover .project-card {
     transform: translate(-6px, -6px);
 
     background: var(--lavender);
-
-    /*
-       Add a solid shadow 10px right and 10px down.
-    */
     box-shadow: 10px 10px 0 var(--pink);
+}
+
+
+/*
+   Provide visible keyboard focus for people
+   navigating with the Tab key.
+*/
+.project-card-link:focus-visible {
+    outline: 3px solid var(--pink);
+    outline-offset: 6px;
+}
+
+
+/*
+   Give the final "All Projects" card a slightly
+   different starting color.
+*/
+.project-card-more {
+    background: var(--pink);
 }
 
 
