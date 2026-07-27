@@ -179,11 +179,7 @@ nav a:hover {
     */
     isolation: isolate;
 
-    /*
-       Hide parts of decorative objects that extend outside
-       the hero section.
-    */
-    overflow: hidden;
+    overflow: visible;
 
     /*
        Build a two-column layout:
@@ -195,15 +191,14 @@ nav a:hover {
     /*
        The first column receives slightly more space.
 
-       minmax(0, 1.15fr):
-       Can shrink to zero and receives 1.15 shares.
+       minmax(0, 1.14fr):
+       Can shrink to zero and receives 1.14 shares.
 
-       minmax(420px, 0.85fr):
-       Stays at least 420px wide and receives 0.85 shares.
+       minmax(340px, 0.6fr):
+       Stays at least 340px wide and receives 0.6 shares.
     */
-    grid-template-columns:
-        minmax(0, 1.15fr)
-        minmax(420px, 0.85fr);
+   
+    grid-template-columns: minmax(0, 1.14fr) minmax(340px, 0.6fr);
 
     /* Vertically center the two columns */
     align-items: center;
@@ -286,17 +281,17 @@ nav a:hover {
     /*
        Responsive font size:
 
-       Minimum: 3.8rem
-       Preferred: 6.5% of viewport width
-       Maximum: 7rem
+       Minimum: 3.5rem
+       Preferred: 5.4% of viewport width
+       Maximum: 6rem
     */
-    font-size: clamp(3.8rem, 6.5vw, 7rem);
+    font-size: clamp(3.5rem, 5.4vw, 6rem);
 
     /*
        Tight line spacing makes the large heading
        feel more compact.
     */
-    line-height: 0.92;
+    line-height: 0.95;
 
     /*
        Slight negative letter spacing pulls large
@@ -419,56 +414,23 @@ nav a:focus-visible,
 
 .floating-name {
     position: relative;
-
-    /*
-       Keep the decorative name behind the hero content.
-    */
     z-index: 1;
 
-    /*
-       Place the name at the bottom of its grid column.
-    */
+    justify-self: end;
     align-self: end;
 
-    /*
-       vh means viewport height.
-       8vh is 8% of the screen's height.
-    */
-    margin-bottom: 8vh;
+    margin-bottom: 6vh;
 
-    /*
-       Responsive font size:
-       minimum 6rem, preferred 10vw, maximum 11rem.
-    */
-    font-size: clamp(6rem, 10vw, 11rem);
-
+    font-size: clamp(5rem, 8vw, 8.5rem);
     font-weight: 900;
     line-height: 0.68;
     letter-spacing: -0.06em;
 
-    /*
-       Lavender with 32% opacity.
+    color: rgba(231, 228, 243, 0.42);
 
-       rgba values:
-       red, green, blue, alpha
-    */
-    color: rgba(231, 228, 243, 0.32);
-
-    /*
-       Prevent the decorative name from blocking clicks
-       or mouse events intended for elements beneath it.
-    */
     pointer-events: none;
-
-    /*
-       Prevent visitors from highlighting the decorative text.
-    */
     user-select: none;
 
-    /*
-       JavaScript changes the transform property,
-       and this transition smooths that movement.
-    */
     transition: transform 180ms ease-out;
 }
 
