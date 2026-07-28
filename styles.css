@@ -433,7 +433,8 @@ nav a:focus-visible,
     letter-spacing: -0.06em;
     text-align: right;
 
-    color: var(--lavender);
+    color: rgba(231, 228, 243, 0.24);
+   opacity: 0.24;
    
 
     pointer-events: none;
