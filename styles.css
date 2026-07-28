@@ -418,8 +418,8 @@ nav a:focus-visible,
 
     /* Anchor the watermark to the bottom-right of the screen */
     right: clamp(0.5rem, 3vw, 2.5rem);
-   bottom: clamp(0.5rem, 2.5vh, 2rem);
-   opacity: 0.05;
+   bottom: clamp(0.5rem, 3vh, 2rem);
+   opacity: 0;
 
     /*
        Keep it behind important content but still visible
