@@ -787,6 +787,205 @@ nav a:focus-visible,
     margin: 100px auto 0;
 }
 
+/* =========================================================
+   WRITING INDEX PAGE
+   ========================================================= */
+
+/*
+   Light background for the complete Writing page.
+*/
+.writing-page {
+    position: relative;
+    z-index: 2;
+
+    min-height: 100vh;
+    padding: 80px 5% 120px;
+
+    background: var(--sky);
+    color: var(--navy);
+}
+
+
+/*
+   Introductory heading at the top of the page.
+*/
+.writing-heading {
+    width: min(1200px, 100%);
+    margin: 0 auto 110px;
+}
+
+
+.writing-heading h1 {
+    margin: 12px 0 24px;
+
+    font-size: clamp(4.5rem, 11vw, 10rem);
+    line-height: 0.84;
+    letter-spacing: -0.06em;
+}
+
+
+.writing-introduction {
+    max-width: 680px;
+
+    font-size: clamp(1.15rem, 2vw, 1.4rem);
+    line-height: 1.65;
+}
+
+
+/*
+   One category of writing, such as Technical Explanations.
+*/
+.writing-category {
+    width: min(1200px, 100%);
+    margin: 0 auto 120px;
+}
+
+
+.writing-category h2 {
+    margin: 10px 0 38px;
+
+    font-size: clamp(2.4rem, 5vw, 4.5rem);
+    line-height: 1;
+    letter-spacing: -0.04em;
+}
+
+
+/*
+   Dark eyebrow text is more readable against the light page.
+*/
+.writing-page .eyebrow {
+    color: var(--navy);
+}
+
+
+/*
+   Responsive article-card layout.
+*/
+.writing-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(300px, 1fr));
+
+    gap: 26px;
+}
+
+
+/*
+   Complete clickable article card.
+*/
+.writing-card {
+    display: flex;
+
+    min-height: 340px;
+    padding: 32px;
+
+    border: 2px solid var(--navy);
+    border-radius: 12px;
+
+    background: var(--cream);
+    color: var(--navy);
+    text-decoration: none;
+
+    transition:
+        transform 200ms ease,
+        background 200ms ease,
+        box-shadow 200ms ease;
+}
+
+
+/*
+   Make the article inside the link fill the card.
+*/
+.writing-card article {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+}
+
+
+/*
+   Move linked cards when hovered.
+*/
+a.writing-card:hover {
+    transform: translate(-6px, -6px);
+
+    background: var(--lavender);
+    box-shadow: 10px 10px 0 var(--pink);
+}
+
+
+/*
+   Date and category row.
+*/
+.writing-card-meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+    margin-bottom: 34px;
+
+    font-family: monospace;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+
+/*
+   Article title.
+*/
+.writing-card h3 {
+    margin: 0 0 22px;
+
+    font-size: clamp(1.7rem, 3vw, 2.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.035em;
+}
+
+
+/*
+   Article description.
+*/
+.writing-card p {
+    margin: 0;
+
+    font-size: 1.05rem;
+    line-height: 1.65;
+}
+
+
+/*
+   Keep the Read article link at the card's bottom.
+*/
+.writing-card-action {
+    margin-top: auto;
+    padding-top: 36px;
+
+    font-weight: 700;
+}
+
+
+/*
+   Visible outline for keyboard navigation.
+*/
+.writing-card:focus-visible {
+    outline: 3px solid var(--pink);
+    outline-offset: 6px;
+}
+
+
+/*
+   Non-clickable placeholder card.
+*/
+.writing-card-placeholder {
+    flex-direction: column;
+
+    background: var(--pink);
+}
+
 @media (max-width: 900px) {
     /*
        Temporarily hide desktop navigation.
