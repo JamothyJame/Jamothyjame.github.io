@@ -628,6 +628,45 @@ nav a:focus-visible,
     color: var(--navy);
 }
 
+/* =========================================================
+   FEATURED WRITING — HOMEPAGE
+   ========================================================= */
+
+/*
+   Featured Writing reuses the Projects layout, grid,
+   cards, hover effects, and typography.
+
+   Only the section background and final card color differ.
+*/
+.featured-writing {
+    background: var(--lavender);
+}
+
+
+/*
+   The general eyebrow color is pale, so override it
+   inside this light-colored section.
+*/
+.featured-writing .eyebrow {
+    color: var(--navy);
+}
+
+
+/*
+   Give the final All Writing card its own palette color.
+*/
+.writing-card-more {
+    background: var(--pink);
+}
+
+
+/*
+   Make sure the section stays above the fixed watermark.
+*/
+.featured-writing {
+    position: relative;
+    z-index: 2;
+}
 
 /*
    Introductory heading at the top of Projects,
