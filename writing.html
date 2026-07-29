@@ -10,18 +10,21 @@
 
     <meta
         name="description"
-        content="Written by James Obergh."
+        content="Technical explanations, project logs, and creative writing by James Obergh."
     >
 
     <title>Writing | James Obergh</title>
 
-    <link rel="stylesheet" href="styles.css?v=3">
-    <script src="script.js?v=3" defer></script>
+    <!-- Shared site styles -->
+    <link rel="stylesheet" href="styles.css?v=8">
+
+    <!-- Shared site interactions -->
+    <script src="script.js?v=8" defer></script>
 </head>
 
 <body>
 
-    <!-- Main site navigation -->
+    <!-- Main navigation -->
     <header class="site-header">
         <a class="logo" href="index.html">
             James Obergh
@@ -29,129 +32,189 @@
 
         <nav>
             <a href="projects.html">Projects</a>
-            <a href="writing.html">Writing</a>
+            <a href="writing.html" aria-current="page">Writing</a>
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
         </nav>
     </header>
 
 
-    <main class="projects-page">
+    <!-- Site-wide decorative watermark -->
+    <div class="floating-name" aria-hidden="true">
+        <span class="first-name">James</span>
+        <span class="last-name">Obergh</span>
+    </div>
+
+
+    <main class="writing-page">
 
         <!-- Page introduction -->
-        <section class="page-heading">
-            <p class="eyebrow">Pieces I have made</p>
+        <header class="writing-heading">
+            <p class="eyebrow">Notes, ideas, and explanations</p>
 
             <h1>Writing</h1>
 
-            <p>
-                Prose, poetry, essays
+            <p class="writing-introduction">
+                Technical explanations, project development logs,
+                research notes, and creative work.
             </p>
-        </section>
+        </header>
 
 
-        <!-- Prose -->
-        <section class="project-category">
-            <p class="eyebrow">Hardware</p>
-            <h2>Arduino / Electronics</h2>
+        <!-- =====================================================
+             TECHNICAL EXPLANATIONS
+             ===================================================== -->
 
-            <div class="project-grid">
+        <section class="writing-category">
+            <p class="eyebrow">Understanding systems</p>
+            <h2>Technical Explanations</h2>
+
+            <div class="writing-grid">
+
+                <!-- Article card -->
                 <a
-                    class="project-card-link"
-                    href="projects/duckyscript-interpreter.html"
+                    class="writing-card"
+                    href="writing/duckyscript-interpreter.html"
                 >
-                    <article class="project-card">
-                        <p class="eyebrow">Arduino / C++</p>
-                        <h3>DuckyScript Interpreter</h3>
+                    <article>
+                        <div class="writing-card-meta">
+                            <span>Arduino / C++</span>
+                            <time datetime="2026-07-29">
+                                July 29, 2026
+                            </time>
+                        </div>
+
+                        <h3>
+                            Building a DuckyScript Interpreter
+                            for Arduino
+                        </h3>
 
                         <p>
-                            A lightweight command interpreter for
-                            USB HID-capable Arduino boards.
+                            How multiline strings, parsing, and USB HID
+                            commands can form a small embedded interpreter.
                         </p>
 
-                        <span class="project-link-text">
-                            View project →
+                        <span class="writing-card-action">
+                            Read article →
                         </span>
                     </article>
                 </a>
 
+
+                <!-- Duplicate this block to add another article -->
                 <a
-                    class="project-card-link"
-                    href="projects/electronics-experiments.html"
+                    class="writing-card"
+                    href="writing/semiconductor-supply-chain.html"
                 >
-                    <article class="project-card">
-                        <p class="eyebrow">Electronics</p>
-                        <h3>Electronics Experiments</h3>
+                    <article>
+                        <div class="writing-card-meta">
+                            <span>Semiconductors</span>
+                            <time datetime="2026-07-29">
+                                July 29, 2026
+                            </time>
+                        </div>
+
+                        <h3>
+                            The Strange Companies Behind Modern Chips
+                        </h3>
 
                         <p>
-                            Circuits, LEDs, op-amps, soldering,
-                            and other hardware investigations.
+                            A look at the overlooked materials, machines,
+                            and specialized companies supporting the
+                            semiconductor industry.
                         </p>
 
-                        <span class="project-link-text">
-                            View project →
+                        <span class="writing-card-action">
+                            Read article →
                         </span>
                     </article>
                 </a>
+
             </div>
         </section>
 
 
-        <!-- Poems -->
-        <section class="project-category">
-            <p class="eyebrow">Software</p>
-            <h2>Programming</h2>
+        <!-- =====================================================
+             PROJECT LOGS
+             ===================================================== -->
 
-            <div class="project-grid">
+        <section class="writing-category">
+            <p class="eyebrow">Work in progress</p>
+            <h2>Project Logs</h2>
+
+            <div class="writing-grid">
+
                 <a
-                    class="project-card-link"
-                    href="projects/phone-flip-game.html"
+                    class="writing-card"
+                    href="writing/fpv-learning-log.html"
                 >
-                    <article class="project-card">
-                        <p class="eyebrow">Godot / Mobile</p>
-                        <h3>Phone Flip Game</h3>
+                    <article>
+                        <div class="writing-card-meta">
+                            <span>FPV Drones</span>
+                            <time datetime="2026-07-29">
+                                July 29, 2026
+                            </time>
+                        </div>
+
+                        <h3>
+                            Learning FPV: Starting in the Simulator
+                        </h3>
 
                         <p>
-                            A motion-controlled game using gyroscope
-                            and rotation data.
+                            What I am learning while practicing in Liftoff,
+                            choosing equipment, and preparing for my first
+                            real flight.
                         </p>
 
-                        <span class="project-link-text">
-                            View project →
+                        <span class="writing-card-action">
+                            Read article →
                         </span>
                     </article>
                 </a>
+
             </div>
         </section>
 
 
-        <!-- Essays -->
-        <section class="project-category">
-            <p class="eyebrow">Interactive Systems</p>
-            <h2>Electrical Projects</h2>
+        <!-- =====================================================
+             PERSONAL AND CREATIVE WRITING
+             ===================================================== -->
 
-            <div class="project-grid">
-                <a
-                    class="project-card-link"
-                    href="projects/glyphlings.html"
-                >
-                    <article class="project-card">
-                        <p class="eyebrow">Underglow Skateboard</p>
-                        <h3>GlowBoard</h3>
+        <section class="writing-category">
+            <p class="eyebrow">Outside the workshop</p>
+            <h2>Personal / Creative</h2>
 
-                        <p>
-                           A microcontroller controlled skateboard deck which
-                          changs hues through an led strip underglow system.
-                        </p>
+            <div class="writing-grid">
 
-                        <span class="project-link-text">
-                            View project →
-                        </span>
-                    </article>
-                </a>
+                <!-- Placeholder card for a future article -->
+                <article class="writing-card writing-card-placeholder">
+                    <div class="writing-card-meta">
+                        <span>Coming soon</span>
+                    </div>
+
+                    <h3>
+                        Personal and creative writing will appear here.
+                    </h3>
+
+                    <p>
+                        Poetry, prose, essays, observations, and other work that
+                        does not fit neatly inside a technical category.
+                    </p>
+                </article>
+
             </div>
         </section>
+
     </main>
+
+
+    <footer class="site-footer">
+        <p>Written by James Obergh.</p>
+
+        <a href="index.html">
+            Back home ↑
+        </a>
+    </footer>
 
 </body>
 </html>
