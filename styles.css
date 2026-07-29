@@ -1211,6 +1211,50 @@ a.writing-card:hover {
     border: 0;
 }
 
+/* =========================================================
+   ARTICLE AND PROJECT IMAGES
+   ========================================================= */
+
+/*
+   Container for an image and its caption.
+*/
+.article-image,
+.project-image {
+    width: 100%;
+    margin: 40px 0;
+}
+
+
+/*
+   Make images resize with the page rather than
+   overflowing on narrow screens.
+*/
+.article-image img,
+.project-image img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    border: 2px solid var(--navy);
+    border-radius: 12px;
+}
+
+
+/*
+   Caption displayed underneath the image.
+*/
+.article-image figcaption,
+.project-image figcaption {
+    margin-top: 12px;
+
+    color: var(--navy);
+
+    font-family: monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
 @media (max-width: 900px) {
     /*
        Temporarily hide desktop navigation.
