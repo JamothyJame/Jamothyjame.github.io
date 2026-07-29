@@ -986,6 +986,172 @@ a.writing-card:hover {
     background: var(--pink);
 }
 
+/* =========================================================
+   INDIVIDUAL ARTICLE PAGE
+   ========================================================= */
+
+.article-page {
+    position: relative;
+    z-index: 2;
+
+    min-height: 100vh;
+    padding: 70px 5% 130px;
+
+    background: var(--cream);
+    color: var(--navy);
+}
+
+
+/*
+   Article title and introductory information.
+*/
+.article-header {
+    width: min(950px, 100%);
+    margin: 0 auto 110px;
+}
+
+
+.article-back-link {
+    display: inline-block;
+    margin-bottom: 70px;
+
+    color: var(--navy);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+
+.article-back-link:hover {
+    text-decoration: underline;
+}
+
+
+.article-header .eyebrow {
+    color: var(--navy);
+}
+
+
+.article-header h1 {
+    max-width: 950px;
+    margin: 18px 0 30px;
+
+    font-size: clamp(3.8rem, 8vw, 7.5rem);
+    line-height: 0.9;
+    letter-spacing: -0.055em;
+}
+
+
+.article-subtitle {
+    max-width: 760px;
+
+    font-size: clamp(1.2rem, 2vw, 1.55rem);
+    line-height: 1.6;
+}
+
+
+/*
+   Author, date, and reading-time information.
+*/
+.article-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 28px;
+
+    margin-top: 45px;
+    padding-top: 24px;
+
+    border-top: 2px solid var(--navy);
+
+    font-family: monospace;
+    font-size: 0.9rem;
+}
+
+
+/*
+   Keep article text at a comfortable reading width.
+*/
+.article-body {
+    width: min(760px, 100%);
+    margin: 0 auto;
+}
+
+
+/*
+   Space between major sections.
+*/
+.article-body section {
+    margin-bottom: 80px;
+}
+
+
+.article-body h2 {
+    margin: 0 0 22px;
+
+    font-size: clamp(2.1rem, 4vw, 3.4rem);
+    line-height: 1;
+    letter-spacing: -0.04em;
+}
+
+
+.article-body h3 {
+    margin: 45px 0 16px;
+
+    font-size: clamp(1.4rem, 3vw, 2rem);
+}
+
+
+.article-body p,
+.article-body li {
+    font-size: 1.12rem;
+    line-height: 1.85;
+}
+
+
+.article-body p {
+    margin: 0 0 26px;
+}
+
+
+.article-body li {
+    margin-bottom: 10px;
+}
+
+
+/*
+   Code block styling.
+*/
+.article-body pre {
+    overflow-x: auto;
+
+    margin: 34px 0;
+    padding: 26px;
+
+    border: 2px solid var(--navy);
+    border-radius: 10px;
+
+    background: var(--navy);
+    color: var(--cream);
+}
+
+
+.article-body code {
+    font-family:
+        Consolas,
+        "Courier New",
+        monospace;
+
+    line-height: 1.6;
+}
+
+
+/*
+   Footer beneath an article.
+*/
+.article-footer {
+    width: min(760px, 100%);
+    margin: 110px auto 0;
+}
+
 @media (max-width: 900px) {
     /*
        Temporarily hide desktop navigation.
@@ -1037,4 +1203,50 @@ a.writing-card:hover {
     .project-grid {
         grid-template-columns: 1fr;
     }
+
+   .writing-page {
+    padding-top: 60px;
+}
+
+.writing-heading {
+    margin-bottom: 80px;
+}
+
+.writing-heading h1 {
+    font-size: clamp(4rem, 20vw, 7rem);
+}
+
+.writing-grid {
+    grid-template-columns: 1fr;
+}
+
+.writing-card {
+    min-height: 300px;
+}
+
+.writing-card-meta {
+    flex-direction: column;
+    gap: 6px;
+}
+
+.article-page {
+    padding-top: 50px;
+}
+
+.article-back-link {
+    margin-bottom: 50px;
+}
+
+.article-header {
+    margin-bottom: 80px;
+}
+
+.article-header h1 {
+    font-size: clamp(3.3rem, 14vw, 5.5rem);
+}
+
+.article-details {
+    flex-direction: column;
+}
+   
 }
