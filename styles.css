@@ -1181,7 +1181,49 @@ a.writing-card:hover {
 
     line-height: 1.6;
 }
+.article-body code {
+    font-family:
+        Consolas,
+        "Courier New",
+        monospace;
 
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   ARTICLE IMAGES
+   ========================================================= */
+
+.article-image {
+    width: 100%;
+    margin: 34px 0;
+}
+
+.article-image img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+
+    border: 2px solid var(--navy);
+    border-radius: 10px;
+}
+
+.article-image figcaption {
+    margin-top: 10px;
+
+    font-family: monospace;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+
+/* Footer beneath an article */
+.article-footer {
+    width: min(760px, 100%);
+    margin: 110px auto 0;
+}
 
 /*
    Footer beneath an article.
