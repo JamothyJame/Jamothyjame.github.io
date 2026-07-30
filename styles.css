@@ -1191,6 +1191,24 @@ a.writing-card:hover {
     margin: 110px auto 0;
 }
 
+/*
+   Make every image inside an article responsive.
+   The image may shrink, but it will not exceed
+   the width of the article body.
+*/
+.article-body img {
+    display: block;
+
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+
+    margin: 34px 0;
+
+    border: 2px solid var(--navy);
+    border-radius: 10px;
+}
+
 /* Responsive embedded video */
 .video-embed {
     width: 100%;
